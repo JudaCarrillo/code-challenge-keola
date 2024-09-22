@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="fc487c68-fdfd-427c-871c-4f99344ff21b" name="postgres@keola Mapping">
+      <data-sources db="bfc5fe31-7981-4d59-a9cf-e110ae4a7e31" />
+    </mapping>
+  </component>
+</project>
