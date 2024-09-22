@@ -1,38 +1,41 @@
 package com.codechallenge.keola.customer;
 
+import com.codechallenge.keola.api.application.CustomerService;
 import com.codechallenge.keola.api.domain.customer.Customer;
-import com.codechallenge.keola.api.domain.customer.CustomerRepository;
-import com.codechallenge.keola.api.domain.customer.CustomerService;
+import com.codechallenge.keola.api.domain.customer.ICustomerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
+@SpringBootTest
 class CustomerServiceTest {
 
-    private CustomerRepository customerRepository;
-    private CustomerService customerService;
+    ICustomerRepository customerRepository;
+    CustomerService customerService;
 
     @BeforeEach
-    void setUp() {
-        customerRepository = Mockito.mock(CustomerRepository.class);
-        customerService = new CustomerService(customerRepository);
+    public void setUp() {
+        this.customerRepository = Mockito.mock(ICustomerRepository.class);
+        this.customerService = new CustomerService(customerRepository);
     }
 
     @Test
-    void registerCustomer_ShouldSaveUser() {
-        // Arrange
+    void testCreateCustomer() {
+
         Customer customer = new Customer();
-        customer.setName("Juan");
-        customer.setLastname("Perez");
-        customer.setEmail("juan@gmail.com");
-        customer.setPhone("123456789");
+        customer.setName("John");
+        customer.setLastname("Doe");
+        customer.setEmail("hola@gmail.com");
 
-        // Act
-        customerService.registerCustomer(customer);
+        when(customerRepository.save(customer)).thenReturn(customer);
 
-        // Assert
-        verify(customerRepository, times(1)).save(customer);
+        boolean result = customerService.create(customer);
+        assertTrue(result, "El cliente debería haberse creado correctamente.");
     }
+
 
 }
