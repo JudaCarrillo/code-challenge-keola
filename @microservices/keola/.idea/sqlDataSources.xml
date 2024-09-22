@@ -2,7 +2,12 @@
 <project version="4">
   <component name="DdlMappings">
     <mapping uuid="fc487c68-fdfd-427c-871c-4f99344ff21b" name="postgres@keola Mapping">
-      <data-sources db="bfc5fe31-7981-4d59-a9cf-e110ae4a7e31" />
+      <data-sources db="bfc5fe31-7981-4d59-a9cf-e110ae4a7e31" ddl="ff2d6460-d9d9-405c-a1f9-baaadb276092" />
+      <scope>
+        <node kind="database" qname="live">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
     </mapping>
   </component>
 </project>
