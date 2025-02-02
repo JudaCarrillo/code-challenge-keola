@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shared" />
         <module name="backoffice" />
         <module name="apps" />
       </profile>
@@ -16,6 +17,7 @@
       <module name="apps" options="-parameters" />
       <module name="backoffice" options="-parameters" />
       <module name="code-challenge-keola" options="" />
+      <module name="shared" options="-parameters" />
     </option>
   </component>
 </project>
