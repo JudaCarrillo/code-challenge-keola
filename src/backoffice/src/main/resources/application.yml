@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: backoffice
+
+  webflux:
+    base-path: /api
+
+  r2dbc:
+    url: r2dbc:postgresql://127.0.0.1:5432/backoffice
+    username: root
+    password: ITpg`01M[ls94l7xWD?n94hb0SL|r)
+    name: backoffice
+
+  data:
+    mongodb:
+      uri: mongodb://127.0.0.1:27017/backoffice?authSource=admin
+      database: backoffice
+      username: root
+      password: ITpg`01M[ls94l7xWD?n94hb0SL|r)
